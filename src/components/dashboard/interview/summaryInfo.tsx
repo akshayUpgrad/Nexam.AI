@@ -192,7 +192,7 @@ function SummaryInfo({ responses, interview }: SummaryProps) {
               <DataTable data={tableData} interviewId={interview?.id || ""} />
             </ScrollArea>
           </div>
-          <div className="flex flex-row gap-1 my-2 justify-center">
+          <div className="flex flex-row gap-1 my-2 items-center justify-center">
             <div className="flex flex-col">
               <div className="flex flex-col gap-1 my-2 mt-4 mx-2 p-3 rounded-2xl bg-slate-50 shadow-md max-w-[400px]">
                 <div className="flex flex-row items-center justify-center gap-1 font-semibold mb-1 text-[15px]">
@@ -204,18 +204,6 @@ function SummaryInfo({ responses, interview }: SummaryProps) {
                     {convertSecondstoMMSS(totalDuration / responses.length)}
                   </p>
                 </div>
-              </div>
-              <div className="flex flex-col items-center justify-center gap-1 mx-2 p-3 rounded-2xl bg-slate-50 shadow-md max-w-[360px]">
-                <div className="flex flex-row gap-1 font-semibold mb-1 text-[15px] mx-auto text-center">
-                  Interview Completion Rate
-                  <InfoTooltip content="Percentage of interviews completed successfully" />
-                </div>
-                <p className="w-fit text-2xl font-semibold text-indigo-600  p-1 px-2 bg-indigo-100 rounded-md">
-                  {Math.round(
-                    (completedInterviews / responses.length) * 10000,
-                  ) / 100}
-                  %
-                </p>
               </div>
             </div>
             <div className="flex flex-col gap-1 my-2 mt-4 mx-2 p-4 rounded-2xl bg-slate-50 shadow-md max-w-[360px]">
